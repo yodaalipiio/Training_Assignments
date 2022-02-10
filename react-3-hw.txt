@@ -1,0 +1,274 @@
+1.)
+import React from "react"; 
+import "bootstrap/dist/css/bootstrap.css"; 
+export default class SampleBS extends React.Component{
+    constructor(props){
+        super(props);
+
+    }
+
+    render(){
+        const style={
+            height: "50px",
+            backgroundColor: "#9A0EE1",
+            borderRadius: "10px",
+            border: "10px"
+        }
+        return(
+            <div class="text-light fs-5 fw-bold">
+                <div class="row">
+                    <div class="col-12" style={style}>
+                        <p class="d-flex justify-content-center">col-12</p>
+                    </div>
+                </div>
+                <br></br>
+                <div class="row">
+                    <div class="col-6" style={style}>
+                    <p class="d-flex justify-content-center">col-6</p>
+                    </div>
+                    <div class="col-6" style={style}>
+                    <p class="d-flex justify-content-center">col-6</p>
+                    </div>
+                </div>
+                <br></br>
+                <div class="row">
+                    <div class="col-4" style={style}>
+                    <p class="d-flex justify-content-center">col-4</p>
+                    </div>
+                    <div class="col-4" style={style}>
+                    <p class="d-flex justify-content-center">col-4</p>
+                    </div>
+                    <div class="col-4" style={style}>
+                    <p class="d-flex justify-content-center">col-4</p>
+                    </div>
+                </div>
+                <br></br>
+                <div class="row">
+                    <div class="col-3" style={style}>
+                    <p class="d-flex justify-content-center">col-3</p>
+                    </div>
+                    <div class="col-3" style={style}>
+                    <p class="d-flex justify-content-center">col-3</p>
+                    </div>
+                    <div class="col-3" style={style}>
+                    <p class="d-flex justify-content-center">col-3</p>
+                    </div>
+                    <div class="col-3" style={style}>
+                    <p class="d-flex justify-content-center">col-3</p>
+                    </div>
+                </div>
+                <br></br>
+                <div class="row">
+                    <div class="col-2" style={style}>
+                    <p class="d-flex justify-content-center">col-2</p>
+                    </div>
+                    <div class="col-2" style={style}>
+                       <p class="d-flex justify-content-center">col-2</p>
+                    </div>
+                    <div class="col-2" style={style}>
+                        <p class="d-flex justify-content-center">col-2</p>
+                    </div>
+                    <div class="col-2" style={style}>
+                       <p class="d-flex justify-content-center">col-2</p>
+                    </div>
+                    <div class="col-2" style={style}>
+                       <p class="d-flex justify-content-center">col-2</p>
+                    </div>
+                    <div class="col-2" style={style}>
+                        <p class="d-flex justify-content-center">col-2</p>
+                    </div>
+                </div>
+                <br></br>
+                <div class="row">
+                    <div class="col-1" style={style}>
+                    <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                    <div class="col-1" style={style}>
+                    <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                    <div class="col-1" style={style}>
+                    <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                    <div class="col-1" style={style}>
+                    <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                    <div class="col-1" style={style}>
+                    <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                    <div class="col-1" style={style}>
+                    <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                    <div class="col-1" style={style}>
+                    <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                    <div class="col-1" style={style}>
+                    <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                    <div class="col-1" style={style}>
+                    <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                    <div class="col-1" style={style}>
+                    <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                    <div class="col-1" style={style}>
+                    <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                    <div class="col-1" style={style}>
+                        <p class="d-flex justify-content-center">col-1</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+2.)
+Complete the below activity to apply bootstrap on a table 
+
+==>>How to Show Data Grids with Bootstrap Theming in React with React Bootstrap Table 
+
+--Bootstrap is one of the most popular UI frameworks. It provides ready-to-use components that simplify building web applications. 
+
+--The Table component in Bootstrap provides beautiful styling for different styles of tables. However, it does not provide additional functionality commonly needed in applications like sorting, filtering, paging, in-cell editing. That's where the React Bootstrap Table comes into play. 
+
+--The React Bootstrap Table is the library that provides the Table component that supports Bootstrap theming and has got a rich set of additional features. 
+
+ 
+
+npx create-react-app testapp 
+
+cd testapp 
+
+ 
+
+step 1: 
+
+React Bootstrap Table relies on Bootstrap for styling, so we need to install the bootstrap package for the Bootstrap CSS files as well: 
+
+ 
+
+# add with npm 
+
+ 
+
+npm install bootstrap 
+
+ 
+
+# or with yarn 
+
+ 
+
+yarn add bootstrap 
+
+ 
+
+ Adding React Bootstrap Table 
+
+ 
+
+We start by adding the React Bootstrap Table to a project: 
+
+ 
+
+# add with npm 
+
+ 
+
+npm install react-bootstrap-table-next 
+
+ 
+
+# or with yarn 
+
+ 
+
+yarn add react-bootstrap-table-next 
+
+ 
+
+ 
+
+import React from "react"; 
+
+ 
+
+import "bootstrap/dist/css/bootstrap.css"; 
+
+import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css"; 
+
+import BootstrapTable from "react-bootstrap-table-next"; 
+
+ 
+
+const products = [ 
+
+  { id: 0, name: "Item name 0", price: 2100 }, 
+
+  { id: 1, name: "Item name 1", price: 2101 }, 
+
+  { id: 2, name: "Item name 2", price: 2102 }, 
+
+  { id: 3, name: "Item name 3", price: 2103 } 
+
+]; 
+
+ 
+
+const columns = [ 
+
+  { 
+
+    dataField: "id", 
+
+    text: "Product ID", 
+
+    sort: true 
+
+  }, 
+
+  { 
+
+    dataField: "name", 
+
+    text: "Product Name", 
+
+    sort: true 
+
+  }, 
+
+  { 
+
+    dataField: "price", 
+
+    text: "Product Price" 
+
+  } 
+
+]; 
+
+ 
+
+export default function BSTable() { 
+
+  return ( 
+
+    <div className="App"> 
+
+      <BootstrapTable 
+
+        bootstrap4 
+
+        keyField="id" 
+
+        data={products} 
+
+        columns={columns} 
+
+      /> 
+
+    </div> 
+
+  ); 
+
+}

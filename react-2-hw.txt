@@ -1,0 +1,183 @@
+import React from 'react';
+import NumberList from './NumberList';
+export default class Login extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            uid:"user", 
+            pass:"p4$S",
+            isLoggedIn: false,
+            inuid:"",
+            inpass:"",
+        }
+    }
+    
+    saveUnameInput=(event)=>{
+        this.setState({
+            inuid: event.target.value
+        });
+    }
+
+    savePassInput=(event)=>{
+        this.setState({
+            inpass: event.target.value
+        });
+    }
+    content=(event)=>{
+        const style = {
+            width: "30%",
+            height: "30px",
+            borderRadius: "20px",
+            border: "0px"
+        }
+        const button ={
+            width: "30%",
+            height: "30px",
+            borderRadius: "20px",
+            border: "0px",
+            color: "white",
+            backgroundColor: "#194D33"
+            
+        }
+        const numbers = [1,2,3,4,5,6];
+        const status = this.state.isLoggedIn
+        if(!status){
+            
+            return(
+                
+                <div style={this.props.style}>
+                    <h1>Log in</h1>
+                    <input type="text" style={style} placeholder="Username" onChange={this.saveUnameInput}></input><br></br>
+                    <br></br>
+                    <input type="password" style={style} placeholder="Password" onChange={this.savePassInput}></input><br></br>
+                    <br></br>
+                    <button style={button} onClick={this.logIn}>Submit</button>
+                    
+                    <br></br>
+                    <br></br>
+                </div>
+            );
+        }
+        
+        return(
+           <NumberList style = {style} number={numbers}/>
+        );
+
+        
+  
+        
+    }
+    logIn=(event)=>{
+        var inuid = this.state.inuid;
+        var inpass = this.state.inpass;
+        var uid = this.state.uid;
+        var pass= this.state.pass;
+        if(uid===inuid & pass===inpass){
+            this.setState({isLoggedIn: true})
+        }
+        else{
+            this.setState({isLoggedIn: false})
+        }
+        
+    }
+
+    render(){
+        
+        
+        return(
+            <div>
+               {this.content()}
+            </div>
+            
+        );
+    }
+}
+
+______________________________________________
+
+export default function NumberList (props){
+    const numbers = props.number;
+    return(
+        <div style={props.style}>
+        <ul>
+            {numbers.map((number)=>
+                <li>{number}</li>
+            )}
+        </ul>     
+        </div>
+    );
+}
+
+2.)
+
+import React from 'react';
+export default class TableRow extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+       return (
+          <tr  style = {this.props.style}>
+             <td style = {this.props.style}>{this.props.componentData.id}</td>
+             <td style = {this.props.style}>{this.props.componentData.name}</td>
+             <td style = {this.props.style}>{this.props.componentData.age}</td>
+          </tr>
+       );
+    }
+ }
+______________________________________________________
+export default class Table extends React.Component {
+    constructor() {
+       super();		
+       this.state = {
+          data:[ 
+
+            { 
+
+               "id":1, 
+               "name":"Foo", 
+               "age":"20" 
+
+            }, 
+
+            { 
+
+               "id":2, 
+               "name":"Bar", 
+               "age":"30" 
+
+            }, 
+
+            { 
+
+               "id":3, 
+               "name":"Baz", 
+               "age":"40" 
+
+            } 
+
+         ] 
+       }
+    }
+    render() {
+       const tableStyle={
+            border:"1px solid black"
+       }
+       return (
+          <div style = {this.props.style}>
+             <table style={tableStyle}>
+                <tr style = {tableStyle}>
+                    <th  style = {tableStyle}>ID</th>
+                    <th  style = {tableStyle}>NAME</th>
+                    <th  style = {tableStyle}>AGE</th>
+                </tr>
+                {this.state.data.map((dynamicComponent, i) => <TableRow style = {tableStyle}
+                   key = {i} componentData = {dynamicComponent}/>)}
+             </table>
+          </div>
+       );
+    }
+ }
+
+
+ 

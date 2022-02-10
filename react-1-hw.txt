@@ -1,0 +1,136 @@
+1.)
+import logo from './logo.svg';
+import './App.css';
+import Welcome from './Welcome';
+_______________________________________________
+function App() {
+  return (
+    <div>
+    <Welcome user="Yohanno"/>
+    <hr />
+    </div>
+  );
+}
+________________________________________________
+2.)
+export default App;
+
+export default function Calculator(props){
+    return(
+        <h2>The sum of {props.number1} and {props.number2} is <strong>{props.total}</strong></h2>
+    );
+}
+
+________________________________________________
+import React from 'react';
+
+export default class Add extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {first: 0, second: 0, sum: 0};
+    
+    }
+    changeFirst=(event)=>{
+        this.setState({first: Number(event.target.value)});
+        
+    }
+    changeSecond=(event)=>{
+        this.setState({second: Number(event.target.value)});
+    }
+    getSum=(event)=>{
+        this.setState({sum: Number(this.state.first)+ Number(this.state.second)});
+    }
+    render(){
+        const style = {
+            width: "10%",
+            height: "30px",
+            borderRadius: "20px",
+            border: "0px"
+        }
+        const button ={
+            width: "10%",
+            height: "30px",
+            borderRadius: "20px",
+            border: "0px",
+            color: "white",
+            backgroundColor: "#9A0EE1"
+            
+        }
+        return(
+            <div style = {this.props.style}>
+                <h3>Add Two Numbers</h3>
+                <input type="text" id="first" style={style}  onChange={this.changeFirst}></input>
+                &nbsp;+&nbsp;
+                <input type="text" id="second" style={style} onChange={this.changeSecond}></input>
+                 <br></br>
+                 <br></br>
+                <input type="text" id="sum" value={this.state.sum} style={style} ></input>
+                &nbsp;  &nbsp;&nbsp;&nbsp;
+                <button type='button' onClick={this.getSum} style={button}> Add </button>
+                <br></br>
+                <br></br>
+            </div>
+        );
+    }
+  
+}
+4.)
+export default class Card extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            value: "",
+            result: "no input"
+        }
+    }
+    
+    setInput=(event)=>{
+        this.setState({value: event.target.value})
+        
+        
+    }
+    checkInput=(event)=>{
+        if(isNaN(this.state.value)){
+            this.setState({result: "this is not a number"})
+         }
+         else{
+            this.setState({result: "this is a number"})
+         }
+    }
+    
+    render(){
+        const style = {
+            width: "10%",
+            height: "30px",
+            borderRadius: "25px",
+            border: "0px"
+        }
+        const button ={
+            width: "10%",
+            height: "30px",
+            borderRadius: "25px",
+            border: "0px",
+            color: "white",
+            backgroundColor: "#194D33"
+            
+        }
+        return(
+            <div style={this.props.style}>
+                <h3>Age</h3>
+                <input type="text" style={style} onChange={this.setInput}></input>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button style={button} onClick={this.checkInput}>Check</button>
+                <p>{this.state.result}</p>
+                <br></br>
+            </div>
+        );
+    }
+}
+5.)
+A virtual DOM object is a representation of a DOM object, like a lightweight copy.
+
+A virtual DOM object has the same properties as a real DOM object, but it lacks the real thing’s power to directly change what’s on the screen.
+
+
+
+
