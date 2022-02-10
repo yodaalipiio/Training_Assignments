@@ -1,0 +1,120 @@
+1.)
+public class Assignment1 {
+    public static int getLargest(int[]a,int arraySize){
+        int temp;
+        for (int i=0; i<arraySize;i++){
+            for(int j=i + 1; j<arraySize; j++){
+                if(a[i]>a[j])
+                {
+                    temp = a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+        return a[arraySize-1];
+    }
+
+
+
+    public static void main (String args[]){
+        int a[]={2,4,6,8,10};
+        System.out.println("The largest number in the array is:" +
+                getLargest(a,5));
+    }
+}
+
+2.)
+
+public class Assignment2 {
+    public static void getSquareAndCube(int Number) {
+        System.out.println("The Square of the given number is: " + Math.pow(Number, 2));
+        System.out.println("The Cube of the give number is: " + Math.pow(Number, 3));
+
+    }
+
+    public static void main(String[] args){
+        int given = 13;
+        getSquareAndCube(given);
+    }
+}
+
+3.)
+public class Assignment3 {
+
+
+    public static void SwapNumber(int num1, int num2) {
+
+       
+        int a = num1; 
+        int b = num2; 
+        int temp = 0;
+        System.out.println("Before Swap");
+
+        System.out.println("the value of a is: " + a);
+
+        System.out.println("the value of b is: " + b);
+
+        System.out.println("After Swap");
+
+        temp = a;
+        a = b;
+        b = temp;
+
+        System.out.println("the value of a is: " + a);
+
+        System.out.println("the value of b is: " + b;
+
+    }
+
+    public static void main(String[] args) {
+
+        int a = 1;
+        int b = 2;
+
+        SwapNumber(a, b);
+
+    }
+
+}
+
+4.)
+public class Assignment4 {
+    public static void main (String args[]) {
+
+        int num1 = 1;
+        int num2 = 2;
+        char operation = '+';
+
+        switch (operation) {
+
+            case '+':
+                System.out.println("Add the two numbers;");
+                int sum = num1 + num2;
+                System.out.println("The sum of the two number: "+ sum);
+                break;
+            case '-':
+                System.out.println("Subtract the two numbers;");
+                int diff = num1 - num2;
+                System.out.println("The difference of the two number: "+ diff);
+                break;
+            case '*':
+                System.out.println("Multiply the two numbers;");
+                int product = num1 * num2;
+                System.out.println("The product of the two number: "+ product);
+                break;
+            case '/':
+                System.out.println("Divide the two numbers;");
+                int quotient = num1 / num2;
+                System.out.println("The quotient of the two numbers: "+ quotient);
+                break;
+            default:
+                System.out.println("Error: please choose again");
+        }
+
+    }
+
+}
+}
+
+
